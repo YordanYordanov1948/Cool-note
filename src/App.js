@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     // storing input name
-    localStorage.setItem("Name", JSON.stringify(name));
+    localStorage.getItem("Name", JSON.stringify(name));
   }, [name]);
 
   return (
