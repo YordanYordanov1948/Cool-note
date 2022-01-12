@@ -5,7 +5,7 @@ function App() {
   const [name, setName] = useState("");
 
   const handle = () => {
-    localStorage.getItem("Name", name);
+    localStorage.setItem("Name", name);
   };
   const remove = () => {
     localStorage.removeItem("Name");
@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     // storing input name
-    localStorage.getItem("Name", JSON.stringify(name));
+    localStorage.setItem("Name", JSON.stringify(name));
   }, [name]);
 
   return (
