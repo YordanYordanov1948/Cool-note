@@ -8,6 +8,10 @@ function App() {
     localStorage.setItem("Name", name);
   };
 
+  const setSumbit = () => {
+    localStorage.getItem("Name");
+  };
+
   const remove = () => {
     localStorage.removeItem("Name");
   };
@@ -22,6 +26,7 @@ function App() {
               placeholder="Notes..."
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onSubmit={setSumbit}
             />
           </div>
         </div>
