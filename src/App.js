@@ -7,6 +7,7 @@ function App() {
   const handle = () => {
     localStorage.setItem("Name", name);
   };
+
   const remove = () => {
     localStorage.removeItem("Name");
   };
@@ -20,7 +21,6 @@ function App() {
               className="textarea is-large"
               placeholder="Notes..."
               value={name}
-              id={localStorage.getItem("Name")}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
