@@ -5,7 +5,7 @@ function App() {
   const [name, setName] = useState("");
 
   const handle = () => {
-    localStorage.setItem("Name", name);
+    localStorage.getItem("Name", name);
   };
   const remove = () => {
     localStorage.removeItem("Name");
