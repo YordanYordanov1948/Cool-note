@@ -20,7 +20,8 @@ function App() {
             <textarea
               className="textarea is-large"
               placeholder="Notes..."
-              value={localStorage.getItem("Name", name)}
+              value={name}
+              onSubmit={localStorage.getItem("Name")}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
