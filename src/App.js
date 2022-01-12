@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [name, setName] = useState("");
@@ -11,6 +11,11 @@ function App() {
     localStorage.removeItem("Name");
   };
 
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("Name", JSON.stringify(name));
+  }, [name]);
+
   return (
     <div className="App">
       <div className="box">
@@ -19,7 +24,7 @@ function App() {
             <textarea
               className="textarea is-large"
               placeholder="Notes..."
-              value={localStorage.getItem("Name").name}
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
