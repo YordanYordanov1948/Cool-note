@@ -8,10 +8,6 @@ function App() {
     localStorage.setItem("Name", name);
   };
 
-  const setSumbit = () => {
-    localStorage.getItem("Name");
-  };
-
   const remove = () => {
     localStorage.removeItem("Name");
   };
@@ -24,9 +20,8 @@ function App() {
             <textarea
               className="textarea is-large"
               placeholder="Notes..."
-              value={name}
+              value={localStorage.getItem("Name", name)}
               onChange={(e) => setName(e.target.value)}
-              onSubmit={setSumbit}
             />
           </div>
         </div>
