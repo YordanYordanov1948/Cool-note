@@ -2,12 +2,11 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(localStorage.getItem("Name"));
 
   const handle = () => {
     localStorage.setItem("Name", name);
   };
-
   const remove = () => {
     localStorage.removeItem("Name");
   };
@@ -21,7 +20,6 @@ function App() {
               className="textarea is-large"
               placeholder="Notes..."
               value={name}
-              onSubmit={localStorage.getItem("Name")}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
